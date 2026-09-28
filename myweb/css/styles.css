@@ -1,0 +1,148 @@
+/* ===== Element selectors ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #0b3d91;
+    font-family: Georgia, serif;
+}
+
+a {
+    color: #0b3d91;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #d32f2f;
+    text-decoration: underline;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Class selector (repeated sections) ===== */
+.content-section {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 900px;
+    border: 1px solid #456;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+/* ===== ID selector (one unique section) ===== */
+#hobbies {
+    background-color: #f1f6fa;
+}
+
+/* ===== Header and nav ===== */
+header {
+    background-color: #0b3d91;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0 0 0.5rem 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 0.5rem;
+    font-weight: bold;
+}
+
+nav a:hover, nav a:focus {
+    color: #ffd54f;
+}
+
+/* ===== Gallery ===== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery figure {
+    margin: 0;
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.gallery img {
+    border: 2px solid #0b3d91;
+    border-radius: 4px;
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+th, td {
+    border: 1px solid #456;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #0b3d91;
+    color: white;
+}
+
+/* ===== Form ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
+input, select, textarea {
+    padding: 0.5rem;
+    border: 1px solid #456;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+button {
+    background-color: #0b3d91;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover, button:focus {
+    background-color: #d32f2f;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0b3d91;
+    color: white;
+    margin-top: 2rem;
+}
