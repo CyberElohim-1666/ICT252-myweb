@@ -1,128 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
+    <meta name="description" content="Nelson Phiri's personal website: a Computer Science student's interests, web development skills and learning journey.">
+    <meta name="color-scheme" content="light dark">
+    <title>Nelson Phiri | My Personal Website</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>My Personal Website</h1>
-        <nav>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="#home" aria-label="Nelson Phiri, home"><span class="monogram" aria-hidden="true">NP</span><span>Nelson Phiri</span></a>
+            <button id="theme-toggle" class="button secondary" type="button" aria-pressed="false" hidden>Dark mode</button>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="#about">About Me</a>
             <a href="#hobbies">My Hobbies</a>
             <a href="#learning">My Learning Plan</a>
+            <a href="#skills">My Skills</a>
             <a href="#photos">My Photos</a>
             <a href="#media">My Media</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
-    <main>
-        <section id="about" class="content-section">
-            <h2>About Me</h2>
-            <p><!-- 50+ word paragraph --></p>
+    <main id="main-content" tabindex="-1">
+        <div id="home" class="hero page-width">
+            <div class="hero-copy">
+                <p class="eyebrow">COMPUTER SCIENCE &middot; SECOND YEAR</p>
+                <h1>Hello, I'm<br><span>Nelson Phiri.</span></h1>
+                <p class="hero-intro">Learning to turn curiosity into useful websites.</p>
+                <p>I am building my foundation in web development, one page and one new skill at a time. Welcome to my personal website.</p>
+                <a class="button" href="#skills">Explore My Skills <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="hero-photo">
+                <img src="images/photo1.jpg" alt="Nelson Phiri wearing a white shirt with a green collar, beside a textured wall" width="2556" height="3408" fetchpriority="high">
+                <p>My learning journey <span>ICT251 Web Technologies</span></p>
+            </div>
+        </div>
+        <div class="page-width intro-grid">
+            <section id="about" class="content-section">
+                <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
+                <h2>About Me</h2>
+                <p>My name is Nelson Phiri and I am a second-year student pursuing a programme in Computer Science. I am passionate about technology and how it shapes the modern world. Through this course, I hope to build a strong foundation in web development so I can create useful and attractive websites. In my free time, I enjoy watching horror movies and watching football analysis, and I am always eager to learn new skills that will help me grow both academically and professionally.</p>
+            </section>
+            <section id="hobbies" class="content-section">
+                <p class="eyebrow">02 / BEYOND THE CLASSROOM</p>
+                <h2>My Hobbies</h2>
+                <ul class="hobby-list">
+                    <li><span aria-hidden="true">01</span>Playing video games</li>
+                    <li><span aria-hidden="true">02</span>Watching horror movies</li>
+                    <li><span aria-hidden="true">03</span>Watching the UEFA Champions League</li>
+                </ul>
+            </section>
+        </div>
+        <section id="learning" class="content-section page-width">
+            <p class="eyebrow">03 / SMALL STEPS, STEADY PROGRESS</p>
+            <h2>My Learning Plan</h2>
+            <ol class="learning-steps">
+                <li>Complete all ICT251 lab activities and submit them on time.</li>
+                <li>Practise HTML and CSS for at least one hour every day.</li>
+                <li>Build two small personal projects by the end of the semester.</li>
+            </ol>
+            <table>
+                <caption>My Weekly Web Learning Plan</caption>
+                <thead><tr><th scope="col">Day</th><th scope="col">Topic</th><th scope="col">Practice Task</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">Monday</th><td>HTML Structure</td><td>Build a simple page with semantic tags</td></tr>
+                    <tr><th scope="row">Wednesday</th><td>CSS Styling</td><td>Style a page with colours and fonts</td></tr>
+                    <tr><th scope="row">Friday</th><td>Media &amp; Forms</td><td>Add images, video, and a form</td></tr>
+                </tbody>
+            </table>
         </section>
-
-        <section id="hobbies" class="content-section">
-            <h2>My Hobbies</h2>
-            <ul>
-                <li>playing video games</li>
-                <li>watching horror movies</li>
-                <li>watching the UEFA cahmpions league</li>
-            </ul>
+        <section id="skills" class="content-section page-width">
+            <p class="eyebrow">04 / WHAT I AM LEARNING</p>
+            <h2>My Skills</h2>
+            <p>These are the three foundations I am practising through this website.</p>
+            <div id="skill-tools" class="filter-tools" hidden>
+                <div class="search-field"><label for="skill-search">Search my skills</label><input id="skill-search" type="search" placeholder="Try HTML, layout or validation" aria-controls="skill-list" maxlength="100"></div>
+                <button id="reset-skills" class="button secondary" type="button">Reset search</button>
+            </div>
+            <p id="skill-status" class="muted" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+            <div id="skill-list" class="skill-grid">
+                <article class="skill-card">
+                    <p class="skill-number" aria-hidden="true">01</p><h3>HTML structure</h3>
+                    <p>I use semantic sections, headings, lists and tables to organise a page. I add labelled forms and descriptive image text so that the content is easier to use.</p>
+                    <p class="skill-tag">HTML &middot; Content &middot; Accessibility</p>
+                </article>
+                <article class="skill-card">
+                    <p class="skill-number" aria-hidden="true">02</p><h3>CSS styling</h3>
+                    <p>I use colour, typography, spacing and the box model to make a page readable. Flexible layouts and media queries help the website fit phones and computers.</p>
+                    <p class="skill-tag">CSS &middot; Layout &middot; Responsive design</p>
+                </article>
+                <article class="skill-card">
+                    <p class="skill-number" aria-hidden="true">03</p><h3>JavaScript interaction</h3>
+                    <p>I am practising variables, functions, events and DOM updates. This website uses them for form validation, photo navigation, skill search and a theme switch.</p>
+                    <p class="skill-tag">JavaScript &middot; Events &middot; Validation</p>
+                </article>
+            </div>
         </section>
-
-        <section id="learning" class="content-section">
-    <h2>My Learning Plan</h2>
-    <ol>
-        <li>Complete all ICT251 lab activities and submit them on time.</li>
-        <li>Practise HTML and CSS for at least one hour every day.</li>
-        <li>Build two small personal projects by the end of the semester.</li>
-    </ol>
-
-    <table>
-        <caption>My Weekly Web Learning Plan</caption>
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Topic</th>
-                <th>Practice Task</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Monday</td>
-                <td>HTML Structure</td>
-                <td>Build a simple page with semantic tags</td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td>CSS Styling</td>
-                <td>Style a page with colors and fonts</td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>Media & Forms</td>
-                <td>Add images, video, and a form</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-
-        <section id="photos" class="content-section">
-    <h2>My Photos</h2>
-    <div class="gallery">
-        <figure>
-            <img src="images/photo1.jpg" alt="A sunset over the mountains">
-            <figcaption>Photo 1: Thinking about something.</figcaption>
-        </figure>
-        <figure>
-            <img src="images/photo2.jpg" alt="My study desk with books and a laptop">
-            <figcaption>Photo 2: My study space where I learn web development.</figcaption>
-        </figure>
-        <figure>
-            <img src="images/photo3.jpg" alt="A plate of food I cooked">
-            <figcaption>Photo 3: home doing nothing.</figcaption>
-        </figure>
-    </div>
-</section>
-
-        <section id="media" class="content-section">
-    <h2>My Media</h2>
-
-    <h3>Self-Introduction Video</h3>
-    <video controls width="480">
-        <source src="videos/intro.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <p>
-        <strong>Written summary:</strong> In this video, I introduce myself, 
-        state my programme, and explain that I hope to learn Ethical Hacking in this course.
-    </p>
-
-    <h3>Audio: My Hobby</h3>
-    <audio controls>
-        <source src="videos/voice.mp3" type="audio/mpeg">
-        Your browser does not support the audio tag.
-    </audio>
-    <p>
-        In this recording, I describe one of my hobbies and why I enjoy it.
-    </p>
-</section>
-
-        
+        <section id="photos" class="content-section page-width photo-section">
+            <div>
+                <p class="eyebrow">05 / MOMENTS FROM MY LIFE</p>
+                <h2>My Photos</h2>
+                <p>Three personal photos from my original website.</p>
+                <p id="gallery-help" class="muted" hidden>Use Previous and Next to browse. The gallery wraps around after the first or last photo.</p>
+            </div>
+            <div class="gallery-shell">
+                <div class="gallery" id="photo-gallery" aria-label="Personal photo gallery">
+                    <figure>
+                        <img src="images/photo1.jpg" alt="Nelson Phiri in a white shirt with a green collar beside a textured wall" width="2556" height="3408" loading="lazy">
+                        <figcaption>Photo 1: Thinking about something.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/photo2.jpg" alt="A close-up portrait of Nelson Phiri indoors against a pale wall" width="2556" height="3408" loading="lazy">
+                        <figcaption>Photo 2: A close-up portrait indoors.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/photo3.jpg" alt="Nelson Phiri facing the camera in a white and green shirt indoors" width="2556" height="3408" loading="lazy">
+                        <figcaption>Photo 3: Relaxing at home.</figcaption>
+                    </figure>
+                </div>
+                <div id="gallery-controls" class="gallery-controls" hidden>
+                    <button id="previous-photo" class="button secondary" type="button" aria-controls="photo-gallery">Previous</button>
+                    <span id="photo-counter">1 / 3</span>
+                    <button id="next-photo" class="button secondary" type="button" aria-controls="photo-gallery">Next</button>
+                </div>
+                <p id="gallery-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+            </div>
+        </section>
+        <section id="media" class="content-section page-width">
+            <p class="eyebrow">06 / IN MY OWN WORDS</p>
+            <h2>My Media</h2>
+            <div class="media-grid">
+                <article class="media-card">
+                    <h3>Self-Introduction Video</h3>
+                    <video controls playsinline preload="metadata" width="480">
+                        <source src="videos/intro.mp4" type="video/mp4">
+                        Your browser does not support video. <a href="videos/intro.mp4">Open my introduction video</a>.
+                    </video>
+                    <p><strong>Written summary:</strong> In this video, I introduce myself, state my programme, and explain that I hope to learn Ethical Hacking in this course.</p>
+                </article>
+                <article class="media-card">
+                    <h3>Audio: My Hobby</h3>
+                    <p class="muted">A short recording from my Activity 2 website.</p>
+                    <audio controls preload="metadata">
+                        <source src="videos/voice.mp3" type="audio/mpeg">
+                        Your browser does not support audio. <a href="videos/voice.mp3">Open my hobby recording</a>.
+                    </audio>
+                    <p><strong>Written summary:</strong> In this recording, I describe one of my hobbies and why I enjoy it.</p>
+                </article>
+            </div>
+        </section>
+        <section id="contact" class="content-section page-width">
+            <p class="eyebrow">07 / TRY THE CONTACT FORM</p>
+            <h2>Contact</h2>
+            <p id="form-notice" class="notice">Browser demonstration only &mdash; no message is sent.</p>
+            <p>Enter your details to check the form and preview your message on this page. All fields are required.</p>
+            <noscript><p class="form-error">Enable JavaScript to use the local form preview. The form does not send messages.</p></noscript>
+            <div class="contact-grid">
+                <form id="contact-form" aria-describedby="form-notice">
+                    <div class="field">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="80" required aria-describedby="name-error">
+                        <p id="name-error" class="form-error" hidden></p>
+                    </div>
+                    <div class="field">
+                        <label for="contact-email">Email</label>
+                        <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="email-error">
+                        <p id="email-error" class="form-error" hidden></p>
+                    </div>
+                    <div class="field">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" maxlength="2000" required aria-describedby="message-help message-error"></textarea>
+                        <p id="message-help" class="field-help">Up to 2,000 characters.</p>
+                        <p id="message-error" class="form-error" hidden></p>
+                    </div>
+                    <p id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                    <div class="form-actions">
+                        <button id="preview-button" class="button" type="submit" disabled>Validate &amp; Preview</button>
+                        <button class="button secondary" type="reset">Clear form</button>
+                    </div>
+                </form>
+                <div class="preview-area">
+                    <div id="preview-placeholder"><h3>A preview, right here.</h3><p>Your validated details will appear here. Nothing is delivered or saved.</p></div>
+                    <div id="contact-preview" hidden>
+                        <h3>Your validated preview</h3>
+                        <p>Data validated. This is a local preview only; no message was sent.</p>
+                        <dl>
+                            <dt>Name</dt><dd id="preview-name"></dd>
+                            <dt>Email</dt><dd id="preview-email"></dd>
+                            <dt>Message</dt><dd id="preview-message"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
     <footer>
-        <p>
-    My name is Nelson Phiri and I am a second-year student pursuing a programme in 
-    Computer science. I am passionate about technology and how it shapes the modern 
-    world. Through this course, I hope to build a strong foundation in web development 
-    so I can create useful and attractive websites. In my free time, I enjoy 
-    watching horror movies, watching foootball analysis and I am always eager to learn new skills that will help me 
-    grow both academically and professionally.2026 Nelson Phiri. All rights reserved.</p>
+        <div class="page-width footer-inner">
+            <p>&copy; 2026 Nelson Phiri. All rights reserved.<br><span>My Personal Website &middot; ICT251 Web Technologies</span></p>
+            <a href="https://github.com/CyberElohim-1666/ICT252-myweb">View Source on GitHub <span aria-hidden="true">&nearr;</span></a>
+        </div>
     </footer>
 </body>
 </html>
